@@ -1,0 +1,69 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Adaptive Lightning",
+        "description": "Wybierz światła do adaptacji. Gdy którekolwiek z nich zostanie włączone – przez cokolwiek – jego jasność i temperatura barwowa zostaną ustawione na podstawie położenia słońca i pory dnia.",
+        "data": {
+          "name": "Nazwa",
+          "lights": "Światła"
+        }
+      }
+    },
+    "error": {
+      "no_lights": "Wybierz co najmniej jedno światło."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opcje Adaptive Lightning",
+        "data": {
+          "lights": "Światła",
+          "min_kelvin": "Najcieplejsza temperatura barwowa (noc, słońce pod horyzontem)",
+          "max_kelvin": "Najzimniejsza temperatura barwowa (słońce wysoko)",
+          "max_brightness": "Jasność w dzień",
+          "evening_brightness": "Jasność wieczorem (po zachodzie słońca)",
+          "night_brightness": "Jasność w nocy",
+          "wind_down_start": "Początek wyciszania przed nocą",
+          "sleep_start": "Poziom nocny osiągany o",
+          "wake_time": "Koniec nocy",
+          "afternoon_shift": "Ocieplenie popołudniowe (z azymutu słońca)",
+          "continuous": "Koryguj na bieżąco włączone światła",
+          "interval": "Odstęp między korektami",
+          "turn_on_transition": "Czas przejścia przy włączeniu światła",
+          "update_transition": "Czas przejścia przy korektach okresowych",
+          "use_weather": "Uwzględniaj pogodę",
+          "weather_entity": "Encja pogody"
+        },
+        "data_description": {
+          "min_kelvin": "Każde światło jest dodatkowo ograniczane do zakresu, który obsługuje.",
+          "afternoon_shift": "O ile cieplejsze jest światło, gdy słońce jest na zachodzie, w porównaniu z tą samą wysokością słońca rano.",
+          "continuous": "Światło zmienione ręcznie jest pomijane do czasu jego wyłączenia i ponownego włączenia.",
+          "use_weather": "W pochmurne dni światło jest nieco cieplejsze i jaśniejsze. Wymaga wybrania encji pogody poniżej."
+        }
+      }
+    },
+    "error": {
+      "no_lights": "Wybierz co najmniej jedno światło.",
+      "kelvin_range": "Najzimniejsza temperatura musi być wyższa niż najcieplejsza.",
+      "brightness_order": "Jasność musi spełniać warunek: noc ≤ wieczór ≤ dzień.",
+      "weather_required": "Wybierz encję pogody albo wyłącz opcję pogody."
+    }
+  },
+  "entity": {
+    "switch": {
+      "adaptation": {
+        "name": "Adaptacja"
+      }
+    },
+    "sensor": {
+      "color_temperature": {
+        "name": "Docelowa temperatura barwowa"
+      },
+      "brightness": {
+        "name": "Docelowa jasność"
+      }
+    }
+  }
+}

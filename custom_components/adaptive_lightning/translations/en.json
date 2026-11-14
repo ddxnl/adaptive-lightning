@@ -1,0 +1,69 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Adaptive Lightning",
+        "description": "Choose the lights to adapt. Whenever one of them is turned on, by anything, its brightness and colour temperature are set from the sun's position and the time of day.",
+        "data": {
+          "name": "Name",
+          "lights": "Lights"
+        }
+      }
+    },
+    "error": {
+      "no_lights": "Select at least one light."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Adaptive Lightning options",
+        "data": {
+          "lights": "Lights",
+          "min_kelvin": "Warmest colour temperature (night, sun below horizon)",
+          "max_kelvin": "Coolest colour temperature (sun high)",
+          "max_brightness": "Daytime brightness",
+          "evening_brightness": "Evening brightness (after sunset)",
+          "night_brightness": "Night brightness",
+          "wind_down_start": "Start dimming for the night at",
+          "sleep_start": "Night level reached at",
+          "wake_time": "Night ends at",
+          "afternoon_shift": "Afternoon warmth (from the sun's azimuth)",
+          "continuous": "Keep adjusting lights that are on",
+          "interval": "Adjustment interval",
+          "turn_on_transition": "Transition when a light turns on",
+          "update_transition": "Transition for periodic adjustments",
+          "use_weather": "Take the weather into account",
+          "weather_entity": "Weather entity"
+        },
+        "data_description": {
+          "min_kelvin": "Each light is additionally limited to the range it supports.",
+          "afternoon_shift": "How much warmer the light is when the sun is in the west, compared with the same elevation in the morning.",
+          "continuous": "A light you adjust by hand is left alone until it is turned off and on again.",
+          "use_weather": "On overcast days the light gets slightly warmer and brighter. Requires a weather entity below."
+        }
+      }
+    },
+    "error": {
+      "no_lights": "Select at least one light.",
+      "kelvin_range": "The coolest temperature must be higher than the warmest.",
+      "brightness_order": "Brightness must satisfy: night ≤ evening ≤ daytime.",
+      "weather_required": "Select a weather entity or turn the weather option off."
+    }
+  },
+  "entity": {
+    "switch": {
+      "adaptation": {
+        "name": "Adaptation"
+      }
+    },
+    "sensor": {
+      "color_temperature": {
+        "name": "Target colour temperature"
+      },
+      "brightness": {
+        "name": "Target brightness"
+      }
+    }
+  }
+}
